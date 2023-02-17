@@ -1,6 +1,6 @@
 {
-    "name": "statikbe/laravel-cookie-consent",
-    "description": "Cookie consent modal for EU",
+    "name": "team-clweb/laravel-cookie-consent",
+    "description": "Cookie consent modal for EU (clweb fork)",
     "authors": [
         {
             "name": "Kristof Serré",
