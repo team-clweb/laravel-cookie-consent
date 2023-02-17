@@ -21,6 +21,7 @@ export function setCookie(key, expireDays, value) {
     const date = new Date();
     let expires = null;
 
+    let samesite = window.location.protocol == 'https:' ? 'SameSite=None; Secure' : 'SameSite=lax';
     if (expireDays) {
 
         date.setTime(date.getTime() + expireDays * 24 * 60 * 60 * 1000);
@@ -28,5 +29,5 @@ export function setCookie(key, expireDays, value) {
         expires = date.toUTCString();
     }
 
-    document.cookie = `${encodeURIComponent(key)}=${encodeURIComponent(value)}${expires ? `; expires=${expires}` : ''}; path=/`;
+    document.cookie = `${encodeURIComponent(key)}=${encodeURIComponent(value)}${expires ? `; expires=${expires}` : ''}; path=/ ;`+samesite;
 }
